@@ -78,8 +78,8 @@ function Contact() {
     'w-full rounded-lg border border-white/12 bg-white/[0.04] px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-zinc-500 focus:border-photo-cyan focus:bg-white/[0.06]';
 
   return (
-    <section id="contato" className="section-shell">
-      <div className="mx-auto max-w-6xl px-5 py-16 md:px-6 md:py-24">
+    <section id="contato" className="section-shell relative overflow-hidden">
+      <div className="relative z-10 mx-auto max-w-6xl px-5 py-16 md:px-6 md:py-24">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           {/* Coluna esquerda: texto + redes */}
           <motion.div
@@ -150,9 +150,13 @@ function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.55, delay: 0.1 }}
-            className="relative overflow-hidden rounded-2xl border border-white/10 bg-photo-panel p-6 md:p-8 lg:col-span-7"
+            className="relative lg:col-span-7 h-full"
           >
-            <div className="absolute inset-x-0 top-0 h-0.5 bg-photo-cyan/50" />
+            {/* Brilho vermelho atrás do formulário */}
+            <div className="pointer-events-none absolute -inset-3 z-0 rounded-3xl bg-photo-red/20 blur-xl md:-inset-4 md:blur-2xl" />
+
+            <div className="relative z-10 flex h-full flex-col justify-center overflow-hidden rounded-2xl border border-white/10 bg-photo-panel p-6 md:p-8">
+              <div className="absolute inset-x-0 top-0 h-0.5 bg-photo-red/50" />
 
             {status === 'sent' ? (
               <motion.div
@@ -178,7 +182,7 @@ function Contact() {
                 </button>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="flex h-full flex-col gap-5">
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
                     <label htmlFor="c-name" className="mb-2 block text-xs font-semibold uppercase tracking-wider text-zinc-400">
@@ -211,7 +215,7 @@ function Contact() {
                   </div>
                 </div>
 
-                <div>
+                <div className="flex flex-1 flex-col">
                   <label htmlFor="c-message" className="mb-2 block text-xs font-semibold uppercase tracking-wider text-zinc-400">
                     Mensagem
                   </label>
@@ -221,9 +225,8 @@ function Contact() {
                     value={form.message}
                     onChange={handleChange}
                     required
-                    rows={5}
                     placeholder="Conte um pouco sobre o projeto ou a vaga..."
-                    className={`${inputClass} resize-none`}
+                    className={`${inputClass} flex-1 resize-none`}
                   />
                 </div>
 
@@ -252,6 +255,7 @@ function Contact() {
                 </button>
               </form>
             )}
+            </div>
           </motion.div>
         </div>
       </div>

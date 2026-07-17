@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Code2, Globe } from 'lucide-react';
+import { ArrowUpRight, Code2, Globe, MousePointer2 } from 'lucide-react';
 
 const projects = [
   {
@@ -9,6 +9,15 @@ const projects = [
     highlights: ['Landing page', 'Contato rápido', 'Responsivo'],
     link: 'https://taxicostarica.vercel.app/',
     github: 'https://github.com/edum3lo/site-taxi_costa_rica',
+    stack: ['React', 'Tailwind CSS', 'Vite', 'Framer Motion'],
+    specs: 'Desenvolvimento focado em performance, acessibilidade e SEO local. Interface otimizada para conversão mobile com botões de chamada rápida e integração direta via WhatsApp API.',
+    theme: {
+      glow: 'group-hover/flip:bg-photo-amber/20',
+      bar: 'bg-photo-amber',
+      border: 'border-photo-amber/20',
+      bgTag: 'bg-photo-amber/10',
+      text: 'text-photo-amber'
+    }
   },
   {
     title: 'ContentFlow AI',
@@ -17,6 +26,15 @@ const projects = [
     highlights: ['IA generativa', 'Geração em lote', 'Mobile-first'],
     link: 'https://contentflow-ia-one.vercel.app/?theme=light',
     github: 'https://github.com/edum3lo/ContentFlow-AI',
+    stack: ['Next.js', 'TypeScript', 'Node.js', 'OpenAI'],
+    specs: 'Plataforma full-stack complexa. Implementação de workers assíncronos para processamento em lote via OpenAI API e renderização de componentes React diretamente no servidor.',
+    theme: {
+      glow: 'group-hover/flip:bg-photo-cyan/20',
+      bar: 'bg-photo-cyan',
+      border: 'border-photo-cyan/20',
+      bgTag: 'bg-photo-cyan/10',
+      text: 'text-photo-cyan'
+    }
   },
 ];
 
@@ -49,36 +67,67 @@ function Projects() {
                 transition={{ duration: 0.6, ease: 'easeOut' }}
                 className="group grid items-center gap-8 md:grid-cols-2 md:gap-12"
               >
-                {/* Preview ao vivo */}
+                {/* Preview ao vivo e Card Traseiro (Flip 3D) */}
                 <motion.div
                   initial={{ opacity: 0, x: reversed ? 40 : -40 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: '-80px' }}
                   transition={{ duration: 0.6, ease: 'easeOut' }}
-                  className={`relative ${reversed ? 'md:order-2' : ''}`}
+                  className={`relative group/flip [perspective:1000px] ${reversed ? 'md:order-2' : ''}`}
                 >
-                  {/* Brilho no hover */}
-                  <div className="pointer-events-none absolute -inset-3 z-0 rounded-2xl bg-gradient-to-tr from-photo-red/0 via-photo-amber/0 to-photo-cyan/0 opacity-0 blur-2xl transition-all duration-500 group-hover:from-photo-red/20 group-hover:to-photo-cyan/20 group-hover:opacity-100" />
+                  {/* Brilho no hover ajustado por cor */}
+                  <div className={`pointer-events-none absolute -inset-3 z-0 rounded-2xl bg-transparent opacity-0 blur-2xl transition-all duration-500 ${project.theme.glow} group-hover/flip:opacity-100`} />
 
-                  <div className="relative z-10 overflow-hidden rounded-xl border border-white/10 bg-photo-panel transition-all duration-500 group-hover:-translate-y-2 group-hover:border-photo-cyan/40 group-hover:shadow-2xl group-hover:shadow-photo-cyan/10">
-                    <div className="absolute inset-x-0 top-0 z-20 h-1 bg-gradient-to-r from-photo-red via-photo-amber to-photo-cyan" />
+                  <div className="relative z-10 aspect-[16/10] w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover/flip:[transform:rotateY(180deg)]">
+                    
+                    {/* Face Frontal (Iframe/Preview) */}
+                    <div className="absolute inset-0 overflow-hidden rounded-xl border border-white/10 bg-photo-panel [backface-visibility:hidden]">
+                      <div className="absolute inset-x-0 top-0 z-20 h-1 bg-gradient-to-r from-photo-red via-photo-amber to-photo-cyan" />
 
-                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-900">
-                      {project.link ? (
-                        <>
-                          <div className="absolute inset-0 z-20 bg-transparent" />
-                          <iframe
-                            src={project.link}
-                            title={project.title}
-                            tabIndex={-1}
-                            loading="lazy"
-                            className="absolute left-0 top-0 h-[210%] w-[210%] origin-top-left scale-[0.476] border-none bg-transparent transition-transform duration-700 ease-out pointer-events-none group-hover:scale-[0.5]"
-                          />
-                        </>
-                      ) : (
-                        <div className="flex h-full w-full items-center justify-center bg-zinc-800 text-sm text-zinc-500">Sem prévia</div>
-                      )}
+                      <div className="relative h-full w-full overflow-hidden bg-zinc-900">
+                        {project.link ? (
+                          <>
+                            <div className="absolute inset-0 z-20 bg-transparent" />
+                            <iframe
+                              src={project.link}
+                              title={project.title}
+                              tabIndex={-1}
+                              loading="lazy"
+                              className="absolute left-0 top-0 h-[210%] w-[210%] origin-top-left scale-[0.476] border-none bg-transparent transition-transform duration-700 ease-out pointer-events-none"
+                            />
+                          </>
+                        ) : (
+                          <div className="flex h-full w-full items-center justify-center bg-zinc-800 text-sm text-zinc-500">Sem prévia</div>
+                        )}
+                      </div>
 
+                      {/* Dica de Hover (Face Frontal) */}
+                      <div className="absolute bottom-3 right-3 z-30 flex items-center gap-1.5 rounded-full bg-black/60 px-3 py-1.5 backdrop-blur-md border border-white/10 text-xs font-medium text-zinc-300 shadow-xl">
+                        <MousePointer2 size={14} className="text-photo-cyan animate-pulse" />
+                        <span>Ver detalhes</span>
+                      </div>
+                    </div>
+
+                    {/* Face Traseira (Specs e Stack) */}
+                    <div className="absolute inset-0 flex flex-col justify-center overflow-hidden rounded-xl border border-white/10 bg-photo-panel p-6 sm:p-8 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                      <div className={`absolute inset-x-0 top-0 z-20 h-1 ${project.theme.bar}`} />
+                      
+                      <h4 className="mb-2 text-lg font-bold text-white md:text-xl">Especificações</h4>
+                      <p className="mb-6 text-sm leading-relaxed text-zinc-400 md:text-base">
+                        {project.specs}
+                      </p>
+
+                      <h4 className="mb-3 text-xs font-semibold text-zinc-500 uppercase tracking-wider">Stack Principal</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {project.stack.map(tech => (
+                          <span 
+                            key={tech} 
+                            className={`rounded-md border ${project.theme.border} ${project.theme.bgTag} px-2.5 py-1 text-xs font-semibold ${project.theme.text}`}
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </motion.div>

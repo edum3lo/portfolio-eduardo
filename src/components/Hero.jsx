@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowRight, BriefcaseBusiness, FileText, Download, Eye, ChevronDown } from 'lucide-react';
-import notebookImg from '../assets/Com notebook.png';
-import curriculoPdf from '../assets/Currículo Eduardo Melo.pdf';
+import notebookImg from '../assets/notebook.png';
+import curriculoPdf from '../assets/curriculo.pdf';
 
 function Hero() {
   const [cvOpen, setCvOpen] = useState(false);
