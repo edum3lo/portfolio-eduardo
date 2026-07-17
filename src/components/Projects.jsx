@@ -73,12 +73,13 @@ function Projects() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: '-80px' }}
                   transition={{ duration: 0.6, ease: 'easeOut' }}
-                  className={`relative group/flip [perspective:1000px] ${reversed ? 'md:order-2' : ''}`}
+                  className={`relative group/flip [perspective:1000px] ${reversed ? 'md:order-2' : ''} cursor-pointer`}
+                  tabIndex="0"
                 >
                   {/* Brilho no hover ajustado por cor */}
                   <div className={`pointer-events-none absolute -inset-3 z-0 rounded-2xl bg-transparent opacity-0 blur-2xl transition-all duration-500 ${project.theme.glow} group-hover/flip:opacity-100`} />
 
-                  <div className="relative z-10 aspect-[16/10] w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover/flip:[transform:rotateY(180deg)]">
+                  <div className="relative z-10 aspect-[16/10] w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover/flip:[transform:rotateY(180deg)] group-focus/flip:[transform:rotateY(180deg)]">
                     
                     {/* Face Frontal (Iframe/Preview) */}
                     <div className="absolute inset-0 overflow-hidden rounded-xl border border-white/10 bg-photo-panel [backface-visibility:hidden]">

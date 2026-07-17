@@ -73,12 +73,12 @@ function Hero() {
               Conversar
             </button>
 
-            <div className="relative">
+            <div className="relative flex justify-center min-[390px]:col-span-2 md:col-span-1">
               <button
                 type="button"
                 onClick={() => setCvOpen((o) => !o)}
                 aria-expanded={cvOpen}
-                className="inline-flex w-full min-h-12 items-center justify-center gap-2 rounded-xl border border-white/10 bg-black/40 px-5 py-3 font-bold text-zinc-200 backdrop-blur-md transition-all duration-300 hover:border-photo-cyan/60 hover:bg-white/[0.05] hover:text-photo-cyan active:scale-[0.97] md:w-auto"
+                className="inline-flex w-full min-[390px]:w-[calc(50%-0.375rem)] md:w-auto min-h-12 items-center justify-center gap-2 rounded-xl border border-white/10 bg-black/40 px-5 py-3 font-bold text-zinc-200 backdrop-blur-md transition-all duration-300 hover:border-photo-cyan/60 hover:bg-white/[0.05] hover:text-photo-cyan active:scale-[0.97]"
               >
                 <FileText size={18} />
                 Currículo

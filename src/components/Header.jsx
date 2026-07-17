@@ -14,6 +14,18 @@ function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeId, setActiveId] = useState("");
 
+  const handleScrollTo = (e, href) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+    const targetId = href.replace("#", "");
+    const element = document.getElementById(targetId);
+    if (element) {
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: "smooth" });
+      }, 150);
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
@@ -130,7 +142,7 @@ function Header() {
                   <a
                     key={link.name}
                     href={link.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={(e) => handleScrollTo(e, link.href)}
                     className="group flex items-center gap-3 border-b border-white/5 py-4 font-semibold last:border-b-0"
                   >
                     <span
