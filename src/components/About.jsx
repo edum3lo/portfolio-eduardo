@@ -40,19 +40,19 @@ function About() {
         >
           <div className="text-center md:text-left">
             <p className="eyebrow">Sobre Mim</p>
-            <h2 className="mt-4 max-w-2xl text-2xl font-black leading-tight text-white md:text-4xl">
-              Engenharia de Software e Desenvolvimento Full Stack.
+            <h2 className="mt-4 max-w-2xl text-2xl font-black leading-tight text-white md:text-3xl">
+              Desenvolvimento Front-end & UI/UX Design.
             </h2>
           </div>
           <div className="space-y-4 text-justify text-base leading-7 text-zinc-300 md:space-y-5 md:text-left md:text-lg md:leading-8">
             <p>
-              Sou estudante de Engenharia de Software com foco prático no ecossistema moderno de desenvolvimento web. Construo arquiteturas escaláveis do front-end ao back-end, priorizando performance, código limpo e a melhor experiência para o usuário final.
+              Sou estudante de Engenharia de Software na UFMS e também formado em Produção Publicitária. Essa trajetória me deu um perfil híbrido: consigo unir o design focado na experiência do usuário (UI/UX) com o desenvolvimento técnico para criar interfaces funcionais, responsivas e agradáveis.
             </p>
             <p>
-              Tenho forte domínio no ecossistema React (Next.js, Vite), estilização avançada com Tailwind CSS, além de construção e consumo de APIs robustas utilizando Node.js e TypeScript. Minha abordagem une sólidos fundamentos de engenharia com as melhores ferramentas de UI/UX.
+              Tenho experiência acadêmica e prática na construção de aplicações Front-end utilizando ecossistemas modernos como React, Vue.js, TypeScript e Tailwind CSS, além de forte domínio em prototipação com Figma.
             </p>
             <p>
-              Atualmente, desenvolvo soluções reais para negócios, incluindo integrações complexas com Inteligência Artificial e plataformas voltadas para alta conversão.
+              Com uma vivência anterior em suporte técnico e ensino, desenvolvi facilidade de comunicação e empatia para entender as necessidades dos usuários. Atualmente, busco uma oportunidade de <strong>estágio</strong> para aplicar meus conhecimentos em um ambiente colaborativo e continuar evoluindo.
             </p>
           </div>
         </motion.div>
