@@ -41,18 +41,18 @@ function About() {
           <div className="text-center md:text-left">
             <p className="eyebrow">Sobre Mim</p>
             <h2 className="mt-4 max-w-2xl text-2xl font-black leading-tight text-white md:text-4xl">
-              Desenvolvedor web e estudante de Engenharia de Software.
+              Engenharia de Software e Desenvolvimento Full Stack.
             </h2>
           </div>
           <div className="space-y-4 text-justify text-base leading-7 text-zinc-300 md:space-y-5 md:text-left md:text-lg md:leading-8">
             <p>
-              Trabalho com desenvolvimento web e design de interfaces, do front-end ao back-end. Gosto de construir aplicações organizadas, rápidas e fáceis de usar.
+              Sou estudante de Engenharia de Software com foco prático no ecossistema moderno de desenvolvimento web. Construo arquiteturas escaláveis do front-end ao back-end, priorizando performance, código limpo e a melhor experiência para o usuário final.
             </p>
             <p>
-              Aprendo na prática, criando projetos reais. Também curto a parte de design e identidade visual, então procuro unir estética e funcionalidade em tudo que faço.
+              Tenho forte domínio no ecossistema React (Next.js, Vite), estilização avançada com Tailwind CSS, além de construção e consumo de APIs robustas utilizando Node.js e TypeScript. Minha abordagem une sólidos fundamentos de engenharia com as melhores ferramentas de UI/UX.
             </p>
             <p>
-              Hoje desenvolvo projetos pessoais e soluções para negócios e serviços, sempre buscando evoluir e entregar algo que realmente funcione.
+              Atualmente, desenvolvo soluções reais para negócios, incluindo integrações complexas com Inteligência Artificial e plataformas voltadas para alta conversão.
             </p>
           </div>
         </motion.div>
