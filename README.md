@@ -1,16 +1,61 @@
-# React + Vite
+# Portfólio | Eduardo Melo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfólio pessoal de **Eduardo Melo**, desenvolvedor web full stack e estudante de Engenharia de Software.
 
-Currently, two official plugins are available:
+🔗 **Acesse:** [portfolio-eduardo.vercel.app](https://portfolio-eduardo.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Sobre
 
-## React Compiler
+Site de página única (single page) apresentando quem sou, meus projetos, tecnologias que utilizo e um canal direto de contato. Construído com foco em interface limpa, animações suaves e boa experiência em qualquer tela.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tecnologias
 
-## Expanding the ESLint configuration
+- **React 19** com **Vite** (build e dev server)
+- **Tailwind CSS v4** para estilização
+- **Framer Motion** para animações e microinterações
+- **Lucide** para ícones
+- **FormSubmit** para o formulário de contato (sem back-end)
+- Deploy na **Vercel**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Funcionalidades
+
+- Design responsivo (mobile-first) com tema escuro
+- Animações de entrada e interações no hover
+- Detecção da seção ativa na navegação (scroll-spy)
+- Formulário de contato funcional e chat flutuante
+- Acessibilidade: suporte a `prefers-reduced-motion`, foco visível e labels ARIA
+
+## Rodando localmente
+
+Requer Node.js 18 ou superior.
+
+```bash
+# instalar dependências
+npm install
+
+# ambiente de desenvolvimento
+npm run dev
+
+# build de produção
+npm run build
+
+# pré-visualizar o build
+npm run preview
+```
+
+## Estrutura
+
+```
+src/
+├── assets/          imagens e currículo
+├── components/      seções (Hero, About, Projects, Skills, Contact...)
+├── App.jsx          composição das seções
+├── index.css        tema e tokens de cor
+└── main.jsx         ponto de entrada
+```
+
+## Contato
+
+- **LinkedIn:** [in/oeduardomnunes](https://www.linkedin.com/in/oeduardomnunes/)
+- **E-mail:** eduardomelonunes2001@gmail.com
+- **GitHub:** [edum3lo](https://github.com/edum3lo)
