@@ -3,6 +3,23 @@ import { ArrowUpRight, Code2, Globe, MousePointer2 } from 'lucide-react';
 
 const projects = [
   {
+    title: 'Manual Eng. de Software',
+    description: 'Documentação técnica e guia prático sobre Engenharia de Software. Construído com Quartz, focando em organização de conhecimento e fácil navegação.',
+    tag: 'Documentação',
+    highlights: ['Markdown', 'Digital Garden', 'Busca Full-text'],
+    link: 'https://edum3lo.github.io/manual-engsoft/',
+    github: 'https://github.com/edum3lo/manual-engsoft',
+    stack: ['Quartz', 'TypeScript', 'Node.js', 'Markdown'],
+    specs: 'Site estático gerado a partir de arquivos Markdown utilizando Quartz. Estruturado como um "Digital Garden" para facilitar a interligação de conceitos, documentação técnica, e anotações sobre engenharia de software.',
+    theme: {
+      glow: 'group-hover/flip:bg-photo-red/20',
+      bar: 'bg-photo-red',
+      border: 'border-photo-red/20',
+      bgTag: 'bg-photo-red/10',
+      text: 'text-photo-red'
+    }
+  },
+  {
     title: 'Site Taxista',
     description: 'Site institucional criado para divulgação de serviços de transporte particular, com foco em contato rápido e experiência simples para o cliente.',
     tag: 'Institucional',
