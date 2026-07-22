@@ -3,14 +3,14 @@ import { ArrowUpRight, Code2, Globe, MousePointer2 } from 'lucide-react';
 
 const projects = [
   {
-    title: 'Manual Eng. de Software',
-    description: 'Documentação técnica e guia prático sobre Engenharia de Software. Construído com Quartz, focando em organização de conhecimento e fácil navegação.',
-    tag: 'Documentação',
-    highlights: ['Markdown', 'Digital Garden', 'Busca Full-text'],
+    title: 'EngSoft Playbook',
+    description: 'Meu "segundo cérebro" tecnológico. Uma base de conhecimento pessoal criada para documentar processos, comandos e arquiteturas, resolvendo bloqueios rápidos no dia a dia de um Engenheiro de Software.',
+    tag: 'Base de Conhecimento',
+    highlights: ['Digital Garden', 'Busca Full-text', 'Guias Rápidos'],
     link: 'https://edum3lo.github.io/manual-engsoft/',
     github: 'https://github.com/edum3lo/manual-engsoft',
     stack: ['Quartz', 'TypeScript', 'Node.js', 'Markdown'],
-    specs: 'Site estático gerado a partir de arquivos Markdown utilizando Quartz. Estruturado como um "Digital Garden" para facilitar a interligação de conceitos, documentação técnica, e anotações sobre engenharia de software.',
+    specs: 'Site estático de alta performance gerado com Quartz. Estruturado sob o conceito de "Digital Garden", ele funciona como uma teia de anotações interligadas, tornando a busca por processos, comandos e abstrações complexas instantânea e livre de atritos.',
     theme: {
       glow: 'group-hover/flip:bg-photo-red/20',
       bar: 'bg-photo-red',
